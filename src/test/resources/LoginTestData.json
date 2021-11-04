@@ -1,0 +1,7 @@
+[
+  {  "testPass" : true, "adminLogin" : "admin", "adminPassword" : "admin" },
+  {  "testPass" : false, "adminLogin" : "", "adminPassword" : "admin" },
+  {  "testPass" : false, "adminLogin" : "admin", "adminPassword" : "" },
+  {  "testPass" : false, "adminLogin" : "", "adminPassword" : "" },
+  {  "testPass" : false, "adminLogin" : "admin1", "adminPassword" : "admin1" }
+]
