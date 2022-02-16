@@ -1,19 +1,20 @@
 package org.restore.tests;
 
 import org.openqa.selenium.WebDriver;
-import org.restore.utils.Utils;
 import org.restore.utils.WebDriverSelection;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.restore.utils.Utils.getTestProperties;
+
 public class BaseTest {
 
-    private static String userPassword = new Utils().getTestProperties().getProperty("userPassword");
-    private static String userEmail = new Utils().getTestProperties().getProperty("userEmail");
-    private static WebDriver myPersonalDriver = new WebDriverSelection().getDriverFromProperties();
-    private static String adminName = new Utils().getTestProperties().getProperty("adminName");
-    private static String adminPassword = new Utils().getTestProperties().getProperty("adminPassword");
-    private static int implicitWait = Integer.parseInt(new Utils().getTestProperties().getProperty("implicitWait"));
+    private static final String userPassword = getTestProperties().getProperty("userPassword");
+    private final static String userEmail = getTestProperties().getProperty("userEmail");
+    private static final WebDriver myPersonalDriver = new WebDriverSelection().getDriverFromProperties();
+    private static final String adminName = getTestProperties().getProperty("adminName");
+    private static final String adminPassword = getTestProperties().getProperty("adminPassword");
+    private static final int implicitWait = Integer.parseInt(getTestProperties().getProperty("implicitWait"));
 
     public BaseTest() {
         myPersonalDriver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);

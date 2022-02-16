@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.restore.pages.adminpage.components.MainAdminMenu;
 
 public class AdminPage {
 
@@ -70,6 +71,12 @@ public class AdminPage {
         String searchHeaderStringXpath = String.format("//h1[normalize-space(.) = '%s']", headerToFind);
         return driverHere.findElement(By.xpath(searchHeaderStringXpath)).isDisplayed();
     }
+
+    public MainAdminMenu getMainAdminMenu() {
+        return new MainAdminMenu(driverHere);
+    }
+
+
 
 /*
     private String adminPageUrl = "http://localhost/litecart/admin";
